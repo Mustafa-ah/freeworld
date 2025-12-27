@@ -32,7 +32,7 @@ const locationOnMap = "https://www.google.com/maps/search/?api=1&query=" + latit
         latitude: latitude,
         longitude: longitude,
         timestamp: timestamp,
-        userAgent: navigator.userAgent
+        userAgent: navigator.userAgent,
         locationOnMap: locationOnMap
     };
 
