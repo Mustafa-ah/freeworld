@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image App</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script>
+      // **REPLACE THIS WITH YOUR ACTUAL FIREBASE CONFIG**
+      // const firebaseConfig = {
+      //   apiKey: "YOUR_API_KEY",
+      //   authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      //   projectId: "YOUR_PROJECT_ID",
+      //   storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      //   messagingSenderId: "YOUR_SENDER_ID",
+      //   appId: "YOUR_APP_ID"
+      // };
+      
+      const firebaseConfig = {
+  apiKey: "AIzaSyB1LJaTt_wVcWeu5f5blub-FQleIjzBKhM",
+  authDomain: "freeworld-b9543.firebaseapp.com",
+  projectId: "freeworld-b9543",
+  storageBucket: "freeworld-b9543.firebasestorage.app",
+  messagingSenderId: "391531271230",
+  appId: "1:391531271230:web:d0127f843b231f7c58ed6f",
+  measurementId: "G-KG7E2LDEZG"
+};
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+</head>
+<body>
+    <div id="container">
+        <button id="actionButton">Capture Location and Show Image</button>
+    </div>
+
+    <div id="imageOverlay">
+        <img id="fullScreenImage" src="https://images.all-free-download.com/images/graphicwebp/windmill_scenery_picture_cloudy_sky_high_view_6934482.webp" alt="Full Screen Display">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

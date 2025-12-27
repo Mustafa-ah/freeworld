@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+#actionButton {
+    padding: 20px 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#imageOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    /* Initially hidden */
+    display: none; 
+    z-index: 1000;
+}
+
+#fullScreenImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures the whole image is visible */
+}
